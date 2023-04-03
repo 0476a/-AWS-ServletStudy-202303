@@ -44,6 +44,7 @@ public class SignIn extends HttpServlet {
 			ResponseDto<Boolean> responseDto = 
 					new ResponseDto<Boolean>(400, "사용자 인증 실패", false);
 			out.println(gson.toJson(responseDto));
+			return;
 		}
 		
 		if(!user.getPassword().equals(password)) {
@@ -51,6 +52,7 @@ public class SignIn extends HttpServlet {
 			ResponseDto<Boolean> responseDto = 
 					new ResponseDto<Boolean>(400, "사용자 인증 실패", false);
 			out.println(gson.toJson(responseDto));
+			return;
 		}
 		
 		// 로그인 성공
